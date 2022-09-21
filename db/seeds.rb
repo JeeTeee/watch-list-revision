@@ -1,19 +1,25 @@
 require "open-uri"
 
 puts "Cleaning db..."
+User.destroy_all
 Bookmark.destroy_all
 Movie.destroy_all
 List.destroy_all
 
 
+
 url = "https://tmdb.lewagon.com/movie/top_rated"
 movies = JSON.parse(URI.open(url).read)['results']
 
+puts "Creating user..."
+
+User.create!(email: "guillaume@test.com", password: "123456")
+
 puts "Creating lists..."
 
-  List.create!(name: "Action")
-  List.create!(name: "Bagare")
-  List.create!(name: "Boule")
+List.create!(name: "Action")
+List.create!(name: "Bagare")
+List.create!(name: "Boule")
 
 
 puts "Creating movies..."
