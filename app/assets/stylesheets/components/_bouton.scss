@@ -1,0 +1,14 @@
+.bouton {
+  color: white;
+  background-color: $logo-orange;
+  border-radius: 12px;
+  padding: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: ease-in-out 0.5s;
+
+  &:hover {
+    opacity: 0.8;
+    color: $light-gray;
+  }
+}
